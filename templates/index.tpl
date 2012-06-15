@@ -40,7 +40,7 @@
   <br>
   
   <div class="area">
-    <form method="POST" action="index.php">
+    <form method="POST" action="write.php">
     <input type="hidden" name="thread" value="{$bbs.thread|escape}">
     <div align=left>名前：<br></div>
     <div align=center><input type="text" name="name" size="44"></div>
@@ -59,5 +59,5 @@
 </div>
   
 </body>
-<script src="js/index.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript" charset="UTF-8"></script>
 </html>

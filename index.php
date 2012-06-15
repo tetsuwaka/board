@@ -11,7 +11,7 @@ $smarty = new Smarty;
 
 // DBからスレッドデータを取得
 $db = db_connect();
-$sql = "select * from bbs2 order by id desc";
+$sql = "select * from bbs2 order by date desc";
 $stmt = $db->prepare($sql); $stmt->execute();
 $boardlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
