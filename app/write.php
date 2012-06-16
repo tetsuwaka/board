@@ -1,6 +1,6 @@
 <?php
   // Databaseへのアクセス
-  require('lib/dbaccess.php');
+  require('../lib/dbaccess.php');
   
   // POSTのデータを受けてとる
   $name = $_POST['name'];

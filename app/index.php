@@ -1,10 +1,10 @@
 <?php
 
 // Smartyを取り込む
-include_once("lib/Smarty/Smarty.class.php");
+include_once("../lib/Smarty/Smarty.class.php");
 
 // Databaseへのアクセス
-require('lib/dbaccess.php');
+require('../lib/dbaccess.php');
 
 // Smartyインスタンスの生成
 $smarty = new Smarty;

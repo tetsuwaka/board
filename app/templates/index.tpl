@@ -5,8 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <meta http-equiv="content-script-type" content="text/javascript">
-<link rel="stylesheet" href="css/index.css" type="text/css">
-<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="../css/index.css" type="text/css">
+<script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
 <title>適当な掲示板</title>
 </head>
 
@@ -18,6 +18,16 @@
 <div id="input" align=center>
 </div>
 
+<div id="boardlist" align="center">
+    <table border="2" width="500px">
+    <tr><td>
+    {foreach from=$bbslist item=thread}
+        <a href="index.php?thread={$thread.0.id}">{$thread.0.title|escape}({$thread.0.length})</a>
+    {/foreach}
+    </td></tr>
+    </table>
+</div>
+    
 <div id="board" align=center>
   {foreach from=$bbslist item=thread}
   <div class="thread">
@@ -59,5 +69,5 @@
 </div>
   
 </body>
-<script src="js/index.js" type="text/javascript" charset="UTF-8"></script>
+<script src="../js/index.js" type="text/javascript" charset="UTF-8"></script>
 </html>
