@@ -32,6 +32,11 @@
   </div>
   {/foreach}
   
+   <br>
+   <div class="goindex" align="right">
+       <a href="index.php">ホームに戻る</a>
+   </div>
+  
   <div class="box">
   <br>
   <button class="write">このスレッドに書き込みを行う</button>

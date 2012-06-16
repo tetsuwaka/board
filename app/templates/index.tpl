@@ -43,8 +43,13 @@
   </table>
   </div>
   {/foreach}
+   
+   <br>
+   <div class="gothread" align="right">
+       <a href="thread.php?thread={$thread.0.id}">このスレッドを全部見る</a>
+   </div>
   
-  <div class="box">
+  <div class="box" align="center">
   <br>
   <button class="write">このスレッドに書き込みを行う</button>
   <br>
