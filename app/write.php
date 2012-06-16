@@ -2,7 +2,8 @@
   // Databaseへのアクセス
   require('../lib/dbaccess.php');
   
-  // POSTのデータを受けてとる
+  // POSTのデータを受けとる
+  if(!isset($_POST['body']) or trim($_POST['body']) == ""){header('Location: index.php');}
   $name = $_POST['name'];
   $body = $_POST['body'];
   $thread = $_POST['thread'];
@@ -48,6 +49,10 @@
   
 ?>
 
+
+<html lang="ja-JP">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" charset="UTF-8">
   alert("書き込みました。");
   function exec(){
@@ -56,3 +61,6 @@
   var timer;
   timer = setTimeout("exec()",1000); 
 </script>
+</head>
+<body></body>
+</html>

@@ -15,9 +15,6 @@
 <h1>たぶん掲示板</h1>
 </div>
 
-<div id="input" align=center>
-</div>
-
 <div id="boardlist" align="center">
     <table border="2" width="500px">
     <tr><td>
@@ -72,7 +69,13 @@
   </div>
   {/foreach}
 </div>
-  
+ 
+<br><br>
+<div id="input" align=center>
+    <a href="mkthread.php"><h3>スレッドを作成する</h3></a>
+</div>
+
+
 </body>
 <script src="../js/index.js" type="text/javascript" charset="UTF-8"></script>
 </html>
