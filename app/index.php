@@ -1,5 +1,7 @@
 <?php
 
+define("MAXTHREAD", 5);
+
 // Smartyを取り込む
 include_once("../lib/Smarty/Smarty.class.php");
 
@@ -13,19 +15,24 @@ $smarty = new Smarty;
 $db = db_connect();
 $sql = "select * from bbs2 order by date desc";
 $stmt = $db->prepare($sql); $stmt->execute();
-$boardlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$threadlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $bbslist = array();
 
 // DBからエンティティデータの取得
-foreach ($boardlist as $board){
-  $sql = "select * from entity where thread = :id order by id desc";
-  $params = array(":id" => $board['id']);
+$count = 0;
+foreach ($threadlist as $thread){
+  $sql = "select * from entity where thread = :id order by id desc limit 5";
+  $params = array(":id" => $thread['id']);
   $stmt = $db->prepare($sql); $stmt->execute($params);
   $entlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  $bbslist[] = array($board, $entlist);
+  $bbslist[] = array($thread, $entlist);
+  // 読み込み数になったら終わり
+  ++$count; if ($count == MAXTHREAD){break;}
 }
 
+// threadデータとentityデータをアサイン
+$smarty->assign("threadlist", $threadlist);
 $smarty->assign("bbslist", $bbslist);
 
 // テンプレートに渡す

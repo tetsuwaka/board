@@ -21,8 +21,8 @@
 <div id="boardlist" align="center">
     <table border="2" width="500px">
     <tr><td>
-    {foreach from=$bbslist item=thread}
-        <a href="index.php?thread={$thread.0.id}">{$thread.0.title|escape}({$thread.0.length})</a>
+    {foreach from=$threadlist item=thread}
+        <a href="index.php?thread={$thread.id}">{$thread.title|escape}({$thread.length})</a>
     {/foreach}
     </td></tr>
     </table>
