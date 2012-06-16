@@ -1,6 +1,6 @@
 <?php
 
-define("MAXTHREAD", 5);
+define("MAXTHREAD", 5); //表示スレッド数
 
 // Smartyを取り込む
 include_once("../lib/Smarty/Smarty.class.php");
@@ -17,10 +17,9 @@ $sql = "select * from bbs2 order by date desc";
 $stmt = $db->prepare($sql); $stmt->execute();
 $threadlist = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$bbslist = array();
-
 // DBからエンティティデータの取得
 $count = 0;
+$bbslist = array();
 foreach ($threadlist as $thread){
   $sql = "select * from entity where thread = :id order by id desc limit 5";
   $params = array(":id" => $thread['id']);

@@ -17,22 +17,10 @@
 
 <div id="input" align=center>
 </div>
-
-<div id="boardlist" align="center">
-    <table border="2" width="500px">
-    <tr><td>
-    {foreach from=$threadlist item=thread}
-        <a href="thread.php?thread={$thread.id}">{$thread.title|escape}({$thread.length})</a>
-    {/foreach}
-    </td></tr>
-    </table>
-</div>
     
 <div id="board" align=center>
-  {foreach from=$bbslist item=thread}
-  <div class="thread">
-  <span class="thread_title"><h2>{$thread.0.title|escape}</h2></span>
-  
+<div class="thread">
+<span class="thread_title"><h2>{$thread.0.title|escape}</h2></span>
   {foreach from=$thread.1 item=bbs}
   <div class="entity">
   <table border="1" width=500px>
@@ -65,7 +53,6 @@
   
   
   </div>
-  {/foreach}
 </div>
   
 </body>
