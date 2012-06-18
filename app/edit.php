@@ -18,18 +18,21 @@ session_regenerate_id(true);
 
 // セッションがおかしい
 if (!isset($_SESSION['id'])){
+  $_SESSION = array();
   header("Location: index.php");
   exit;
 }
 
-// ワンタイムトークンパスがない場合
-if ($_POST['ticket'] != $_SESSION['ticket']){
+// 削除ボタンが押された場合
+if(isset($_POST['erase'])){
+  
+  // ワンタイムトークンパスがない場合
+  if ($_POST['ticket'] === $_SESSION['ticket']) {
+  }else{
+    $_SESSION = array();
     header('Location: index.php');
     exit;
-}
-
-
-if(isset($_POST['erase'])){
+  }
   
   // スレッド削除
   if(isset($_POST['thread'])){
@@ -48,7 +51,7 @@ if(isset($_POST['erase'])){
     
   // エンティティ削除
   }else if(isset($_POST['entity'])){
-    $entitylist = explode(":", $_POST['entity']);
+    $entitylist = $_POST['entity'];
     $templist = array();
     foreach ($entitylist as $entity) {$templist[] = "'{$entity}'";}
     $ids = implode(",", $templist);

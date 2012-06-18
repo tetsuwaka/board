@@ -7,15 +7,19 @@ require('../lib/dbaccess.php');
 session_start();
 session_regenerate_id(true);
 
-
+// ポストされるべき要素がない場合
 if (!isset($_POST['title'], $_POST['body'], $_POST['ticket'])){
-    header('Location: index.php');
-    exit;
+  $_SESSION = array();
+  header('Location: index.php');
+  exit;
 }
 
-if ($_POST['ticket'] != $_SESSION['ticket']){
-    header('Location: index.php');
-    exit;
+// ワンタイムトークンパスがない場合
+if ($_POST['ticket'] === $_SESSION['ticket']){
+}else{
+  $_SESSION = array();
+  header('Location: index.php');
+  exit;
 }
 
 $name = $_POST['name'];
