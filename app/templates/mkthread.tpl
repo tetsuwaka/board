@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <meta http-equiv="content-script-type" content="text/javascript">
-<link rel="stylesheet" href="../css/index.css" type="text/css">
+<link rel="stylesheet" href="css/index.css" type="text/css">
 <title>適当な掲示板</title>
 </head>
 

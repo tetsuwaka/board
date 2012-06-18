@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css">
 <meta http-equiv="content-script-type" content="text/javascript">
-<script src="../js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.7.2.min.js" type="text/javascript"></script>
 <title>適当な掲示板</title>
 </head>
 
@@ -42,5 +42,5 @@
 <div align="center"><a href="index.php">ホームに戻る</a></div>
 
 </body>
-<script src="../js/edit.js" type="text/javascript" charset="UTF-8"></script>
+<script src="js/edit.js" type="text/javascript" charset="UTF-8"></script>
 </html>
