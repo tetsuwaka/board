@@ -17,7 +17,7 @@ session_regenerate_id(true);
 $ticket = mkticket();
 $_SESSION['ticket'] = $ticket;
 
-// threadデータとentityデータをアサイン
+// チケットをアサイン
 $smarty->assign('ticket', $ticket);
 
 // テンプレートに渡す

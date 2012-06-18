@@ -10,10 +10,12 @@ session_regenerate_id(true);
 
 if (!isset($_POST['title'], $_POST['body'], $_POST['ticket'])){
     header('Location: index.php');
+    exit;
 }
 
 if ($_POST['ticket'] != $_SESSION['ticket']){
     header('Location: index.php');
+    exit;
 }
 
 $name = $_POST['name'];

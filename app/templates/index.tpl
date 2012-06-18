@@ -75,6 +75,15 @@
     <a href="mkthread.php"><h3>スレッドを作成する</h3></a>
 </div>
 
+<br>
+
+<div id="login" align=center>
+<form method="POST" action="login.php">
+    ID：<input type="text" name="id" size="10">
+    パスワード：<input name="pass" type="password" value="" id="pass" size="10">
+    <input name="login" type="submit" id="login" value="管理者ログイン">
+</form>
+</div>
 
 </body>
 <script src="../js/index.js" type="text/javascript" charset="UTF-8"></script>

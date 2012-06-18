@@ -14,6 +14,7 @@ if (isset($_GET['thread'])){
     $threadid = $_GET['thread'];
 }else{
     header('Location: index.php');
+    exit;
 }
 
 // DBからスレッドデータを取得
