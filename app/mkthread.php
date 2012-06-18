@@ -11,7 +11,7 @@ $smarty = new Smarty;
 
 //sessionスタート
 session_start();
-session_regenerate_id();
+session_regenerate_id(true);
 
 // ワンタイムトークン作成
 $ticket = mkticket();

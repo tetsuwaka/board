@@ -5,7 +5,7 @@ require('../lib/dbaccess.php');
 
 //セッションスタート
 session_start();
-session_regenerate_id();
+session_regenerate_id(true);
 
 
 if (!isset($_POST['title'], $_POST['body'], $_POST['ticket'])){
