@@ -11,6 +11,10 @@ require('../lib/dbaccess.php');
 // Smartyインスタンスの生成
 $smarty = new Smarty;
 
+//セッションデータ削除
+session_start();
+$_SESSION = array();
+
 // DBからスレッドデータを取得
 $db = db_connect();
 $sql = "select * from bbs2 order by date desc";

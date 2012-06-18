@@ -15,10 +15,13 @@
 </div>
 
 <div id="message" align=center>
+{if isset($message)}
+  <p><font color="#FF0000">{$message|escape}</font></p>
+{/if}
 </div>
     
 <div id="main" align=center>
-<form method="POST" action="dummy.php">
+<form method="POST" action="edit.php">
   <input type="hidden" name="ticket" value="{$ticket}"><br>
   
   <p id="type">どちらを削除しますか？<br>
@@ -33,7 +36,10 @@
   <br><br>
   <input name="erase" type="submit" id="erase" value="削除">
 </form>
-</dvi>
+</div>
+
+<br><br>
+<div align="center"><a href="index.php">ホームに戻る</a></div>
 
 </body>
 <script src="../js/edit.js" type="text/javascript" charset="UTF-8"></script>

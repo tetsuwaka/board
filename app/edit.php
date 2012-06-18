@@ -57,11 +57,11 @@ if(isset($_POST['erase'])){
     $ids = implode(",", $templist);
     
     $db = db_connect();
-    $sql = "delete from entity where in (" . $ids . ")";
+    $sql = "delete from entity where id in (" . $ids . ")";
     $stmt = $db->prepare($sql);
     $db->beginTransaction();
     try {
-      $stmt->execute($params);
+      $stmt->execute();
       $db->commit();
     } catch (PDOException $e) {
       $db->rollBack();
