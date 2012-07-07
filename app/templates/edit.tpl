@@ -26,7 +26,7 @@
   
   <p id="type">どちらを削除しますか？<br>
     <input type="radio" name="type" value="thread" id="radio_thread"> スレッド
-    <input type="radio" name="type" value="entity" id ="radio_entity"> エンティティ
+    <input type="radio" name="type" value="entity" id="radio_entity"> エンティティ
   </p>
   
   <span id="selector"></span>
