@@ -10,7 +10,7 @@ class BoardApplication extends Application {
     
     protected function registerRoutes() {
         return array(
-            '/' => array('controller' => 'status', 'action' => 'index')
+            '/' => array('controller' => 'index', 'action' => 'index')
         );
     }
     
