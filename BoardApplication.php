@@ -16,7 +16,7 @@ class BoardApplication extends Application {
     
     protected function configure() {
         $this->db_manager->connect('master', array(
-            'dsn'      => 'mysql:dbname=board;host=localhost',
+            'dsn'      => 'mysql:dbname=board;host=127.0.0.1',
             'user'     => 'user',
             'password' => 'pass',
         ));

@@ -3,7 +3,7 @@
 define("MAXTHREAD", 5); //表示スレッド数
 define("MAXENTITY", 5); //表示エンティティ数
 
-class IndexController extends Collator {
+class IndexController extends Controller {
     
     public function indexAction() {
         // スレッドリストを得る
