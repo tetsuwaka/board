@@ -3,7 +3,7 @@
 class BoardRepository extends DbRepository {
 
     public function getThread() {
-        $sql = "select * from bbs2 order by date desc";
+        $sql = "select * from bbs order by date desc";
         return $this->fetchAll($sql);
     }
     

@@ -7,7 +7,12 @@ class IndexController extends Controller {
     
     public function indexAction() {
         // スレッドリストを得る
-        $threadList = $this->db_manager->get('Board')->getThread();
+        try{
+            $threadList = $this->db_manager->get('Board')->getThread();
+        } catch (PDOException $e) {
+            $this->db_manager->get('CreatingTables')->createBbs();
+            $threadList = $this->db_manager->get('Board')->getThread();
+        }
         
         // DBからエンティティデータの取得
         $count = 0;
