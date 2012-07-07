@@ -68,4 +68,15 @@ abstract class DbRepository
     {
         return $this->execute($sql, $params)->fetchAll(PDO::FETCH_ASSOC);
     }
+    
+     /**
+     * クエリをそのまま実行
+     *
+     * @param string $sql
+     * @return PDOStatement $stmt
+     */
+    public function query($sql)
+    {
+        $this->con->query($sql);
+    }
 }
