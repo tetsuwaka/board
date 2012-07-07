@@ -7,13 +7,13 @@ class IndexController extends Controller {
     
     public function indexAction() {
         // スレッドリストを得る
-        $threadList = $this->db_manager->get('Index')->getThread();
+        $threadList = $this->db_manager->get('Board')->getThread();
         
         // DBからエンティティデータの取得
         $count = 0;
         $bbsList = array();
         foreach ($threadList as $thread) {
-            $entList = $this->db_manager->get('Index')->getEntity($thread['id'], MAXENTITY);
+            $entList = $this->db_manager->get('Board')->getEntity($thread['id'], MAXENTITY);
             $bbsList[] = array($thread, $entList);
             // 読み込み数になったら終わり
             ++$count;
