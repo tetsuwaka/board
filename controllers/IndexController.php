@@ -11,7 +11,10 @@ class IndexController extends Controller {
             $threadList = $this->db_manager->get('Board')->getThread();
         } catch (PDOException $e) {
             $this->db_manager->get('CreatingTables')->createBbs();
-            $threadList = $this->db_manager->get('Board')->getThread();
+            $this->db_manager->get('CreatingTables')->createEntity();
+            $this->db_manager->get('CreatingTables')->createMember();
+            $this->db_manager->get('DefaultMember')->makeDefaultUser('user', 'pass');
+            $threadList = array();
         }
         
         // DBからエンティティデータの取得
