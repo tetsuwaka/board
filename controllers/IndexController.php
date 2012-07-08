@@ -48,7 +48,7 @@ class IndexController extends Controller {
         $bbsList = array($thread, $entList);
         
         return $this->render(array(
-            'bbsList' => $bbsList
+            'thread' => $bbsList
         ));
     }
     
