@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#header{
+    text-align: center;
+}
+
 .thread{
   width:750px;
   background: #98FB98;
