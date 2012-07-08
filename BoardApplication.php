@@ -11,7 +11,7 @@ class BoardApplication extends Application {
     protected function registerRoutes() {
         return array(
             '/' => array('controller' => 'index', 'action' => 'index'),
-            '/:threadid' => array('controller' => 'index', 'action' => 'thread')
+            '/thread/' => array('controller' => 'index', 'action' => 'thread')
         );
     }
     

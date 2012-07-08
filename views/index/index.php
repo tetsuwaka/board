@@ -26,7 +26,7 @@
 
             <br>
             <div class="gothread" align="right">
-                <a href="<?php echo $base_url; ?>/thread?threadid=<?php echo $thread[0]['id']; ?>">このスレッドを全部見る</a>
+                <a href="<?php echo $base_url; ?>/thread/?threadid=<?php echo $thread[0]['id']; ?>">このスレッドを全部見る</a>
             </div>
 
             <div class="box" align="center">
