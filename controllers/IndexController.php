@@ -36,4 +36,20 @@ class IndexController extends Controller {
         ));
     }
     
+    public function threadAction() {
+        $threadid = $this->request->getGet('threadid');
+        
+        if ($threadid === null) {
+            $this->forward404();
+        }
+        
+        $thread = $this->db_manager->get('Board')->getThreadById($threadid);
+        $entList = $this->db_manager->get('Board')->getEntity($threadid);
+        $bbsList = array($thread, $entList);
+        
+        return $this->render(array(
+            'bbsList' => $bbsList
+        ));
+    }
+    
 }

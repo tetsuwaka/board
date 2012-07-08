@@ -10,7 +10,8 @@ class BoardApplication extends Application {
     
     protected function registerRoutes() {
         return array(
-            '/' => array('controller' => 'index', 'action' => 'index')
+            '/' => array('controller' => 'index', 'action' => 'index'),
+            '/:threadid' => array('controller' => 'index', 'action' => 'thread')
         );
     }
     
