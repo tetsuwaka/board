@@ -13,7 +13,7 @@
         <div class="thread">
             <span class="thread_title"><h2><?php echo $this->escape($thread[0]['title']); ?></h2></span>
 
-            <?php foreach ($thread[1] as $bss): ?>
+            <?php foreach ($thread[1] as $bbs): ?>
                 <div class="entity">
                     <table border="1" width=500px>
                         <tr><td>
