@@ -9,7 +9,7 @@ class BoardRepository extends DbRepository {
     
     public function getThreadById($threadid) {
         $sql = "select * from bbs where id = :id";
-        return $this->fetch($sql);
+        return $this->fetch($sql, array(':id' => $threadid));
     }
     
     public function getEntity($id) {
