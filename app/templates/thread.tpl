@@ -61,5 +61,5 @@
         </div>
 
     </body>
-    <script src="js/index.js" type="text/javascript" charset="UTF-8"></script>
+    <script src="/board/js/index.js" type="text/javascript" charset="UTF-8"></script>
 </html>

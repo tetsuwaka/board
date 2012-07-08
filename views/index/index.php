@@ -68,4 +68,4 @@
         <input name="login" type="submit" id="login" value="管理者ログイン">
     </form>
 </div>
-<script src="js/index.js" type="text/javascript" charset="UTF-8"></script>
+<script src="/board/js/index.js" type="text/javascript" charset="UTF-8"></script>
