@@ -1,7 +1,6 @@
 <?php
 
 define("MAXTHREAD", 5); //表示スレッド数
-define("MAXENTITY", 5); //表示エンティティ数
 
 class IndexController extends Controller {
     
@@ -13,7 +12,7 @@ class IndexController extends Controller {
             $this->db_manager->get('CreatingTables')->createBbs();
             $this->db_manager->get('CreatingTables')->createEntity();
             $this->db_manager->get('CreatingTables')->createMember();
-            $this->db_manager->get('DefaultMember')->makeDefaultUser('user', 'pass');
+            $this->db_manager->get('Member')->makeUser('user', 'pass');
             $threadList = array();
         }
         
@@ -21,7 +20,7 @@ class IndexController extends Controller {
         $count = 0;
         $bbsList = array();
         foreach ($threadList as $thread) {
-            $entList = $this->db_manager->get('Board')->getEntity($thread['id'], MAXENTITY);
+            $entList = $this->db_manager->get('Board')->getEntity($thread['id']);
             $bbsList[] = array($thread, $entList);
             // 読み込み数になったら終わり
             ++$count;

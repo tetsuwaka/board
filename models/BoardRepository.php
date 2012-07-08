@@ -7,9 +7,9 @@ class BoardRepository extends DbRepository {
         return $this->fetchAll($sql);
     }
     
-    public function getEntity($id, $limitNum) {
-        $sql = "select * from entity where thread = :id order by id desc limit :limitNum";
-        return $this->fetchAll($sql, array(':id' => $id, ':limitNum' => $limitNum));
+    public function getEntity($id) {
+        $sql = "select * from entity where thread = :id order by id desc limit 5";
+        return $this->fetchAll($sql, array(':id' => $id,));
     }
 
 }
