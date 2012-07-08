@@ -18,7 +18,7 @@
                     <table border="1" width=500px>
                         <tr><td>
                                 <span class="name_date"><b><?php echo $this->escape($bbs['name']); ?> : <?php echo $this->escape($bbs['date']); ?></b></span><br>
-                                <span class="body"><p><?php $this->escape(nl2br($bbs['body'])); ?></p></span>
+                                <span class="body"><p><?php echo nl2br($this->escape($bbs['body'])); ?></p></span>
                             </td></tr>
                     </table>
                 </div>
