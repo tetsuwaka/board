@@ -2,7 +2,7 @@
     <table border="2" width="500px">
         <tr><td>
                 <?php foreach ($threadList as $thread): ?>
-                    <a href="<?php echo $base_url; ?>/thread.php?thread=<?php echo $thread['id']; ?>"><?php echo $this->escape($thread['title']); ?>(<?php echo count($thread); ?>)</a>
+                    <a href="<?php echo $base_url; ?>/thread?thread=<?php echo $thread['id']; ?>"><?php echo $this->escape($thread['title']); ?>(<?php echo count($thread); ?>)</a>
                 <?php endforeach; ?>
             </td></tr>
     </table>
