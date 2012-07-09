@@ -31,7 +31,7 @@ class BoardRepository extends DbRepository {
     
     public function getEntityCount($thread) {
         $sql = "select count(*) from entity where thread = :thread";
-        return $this->fetch($sql, array(':thread' => $thread));
+        return $this->fetchNUM($sql, array(':thread' => $thread));
     }
     
     public function updateThread($thread, $length) {

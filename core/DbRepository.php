@@ -55,6 +55,18 @@ abstract class DbRepository
     {
         return $this->execute($sql, $params)->fetch(PDO::FETCH_ASSOC);
     }
+    
+     /**
+     * クエリを実行し、結果を1行取得(NUM)
+     *
+     * @param string $sql
+     * @param array $params
+     * @return array
+     */
+    public function fetchNUM($sql, $params = array())
+    {
+        return $this->execute($sql, $params)->fetch(PDO::FETCH_NUM);
+    }
 
 
     /**
@@ -67,6 +79,18 @@ abstract class DbRepository
     public function fetchAll($sql, $params = array())
     {
         return $this->execute($sql, $params)->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+     /**
+     * クエリを実行し、結果をすべて取得(NUM)
+     *
+     * @param string $sql
+     * @param array $params
+     * @return array
+     */
+    public function fetchAllNUM($sql, $params = array())
+    {
+        return $this->execute($sql, $params)->fetchAll(PDO::FETCH_NUM);
     }
     
      /**
