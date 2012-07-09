@@ -35,7 +35,7 @@
                 <br>
 
                 <div class="area">
-                    <form method="POST" action="write.php">
+                    <form method="POST" action="<?php echo $base_url; ?>/write">
                         <input type="hidden" name="thread" value="<?php echo $this->escape($bbs['thread']); ?>">
                         <div align=left>名前：<br></div>
                         <div align=center><input type="text" name="name" size="44"></div>

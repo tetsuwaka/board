@@ -12,6 +12,7 @@ class BoardApplication extends Application {
         return array(
             '/' => array('controller' => 'index', 'action' => 'index'),
             '/thread' => array('controller' => 'index', 'action' => 'thread'),
+            '/write' => array('controller' => 'index', 'action' => 'write'),
         );
     }
     
