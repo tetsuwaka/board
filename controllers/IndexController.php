@@ -66,6 +66,8 @@ class IndexController extends Controller {
         // スレッドのアップデート
         $result = $this->db_manager->get('Board')->getEntityCount($thread);
         $this->db_manager->get('Board')->updateThread($thread, $result[0]);
+        
+        return $this->render(array());
     }
 
 }
