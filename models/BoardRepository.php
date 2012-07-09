@@ -35,7 +35,7 @@ class BoardRepository extends DbRepository {
     }
     
     public function updateThread($thread, $length) {
-        $sql = "update bbs2 set length = :length where id = :id";
+        $sql = "update bbs set length = :length where id = :id";
         $this->execute($sql, array(':id' => $thread, ':length' => $length));
     }
 
