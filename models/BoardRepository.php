@@ -62,6 +62,7 @@ class BoardRepository extends DbRepository {
         $ids = implode(",", $tempList);
         $sql = "delete from entity where id in (" . $ids . ")";
         $this->execute($sql);
+        return $ids;
     }
 
 }

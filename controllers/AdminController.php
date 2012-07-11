@@ -52,7 +52,7 @@ class AdminController extends Controller {
 
                 // エンティティ削除
             } else if ($this->request->getPost('entity') !== null) {
-                $this->db_manager->get('Board')->deleteEntities($this->request->getPost('entity'));
+                $ids = $this->db_manager->get('Board')->deleteEntities($this->request->getPost('entity'));
                 $message = "エンティティ{$ids}を削除しました。";
             }
         }
