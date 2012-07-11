@@ -50,7 +50,7 @@ class BoardRepository extends DbRepository {
     }
     
     public function deleteThread($thread) {
-        $sql = "delete from bbs2 where id = :id";
+        $sql = "delete from bbs where id = :id";
         $this->execute($sql, array(":id" => $thread));
     }
     
