@@ -61,7 +61,7 @@
 <br>
 
 <div id="login" align=center>
-    <form method="POST" action="login.php">
+    <form method="POST" action="<?php echo $base_url; ?>/autheniticate">
         <input type="hidden" name="_token" value="<?php echo $this->escape($_token); ?>">
         ID：<input type="text" name="id" size="10">
         パスワード：<input name="pass" type="password" value="" id="pass" size="10">

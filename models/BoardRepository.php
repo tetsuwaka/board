@@ -12,8 +12,18 @@ class BoardRepository extends DbRepository {
         return $this->fetch($sql, array(':id' => $threadid));
     }
     
+    public function getThreadForDelivery() {
+        $sql = "select id, title from bbs order by date desc";
+        return $this->fetchAll($sql);
+    }
+    
     public function getEntity($id) {
         $sql = "select * from entity where thread = :id order by id desc limit 5";
+        return $this->fetchAll($sql, array(':id' => $id,));
+    }
+    
+    public function getAllEntity($id) {
+        $sql = "select * from entity where thread = :id order by date desc";
         return $this->fetchAll($sql, array(':id' => $id,));
     }
     
@@ -37,6 +47,21 @@ class BoardRepository extends DbRepository {
     public function updateThread($thread, $length) {
         $sql = "update bbs set length = :length where id = :id";
         $this->execute($sql, array(':id' => $thread, ':length' => $length));
+    }
+    
+    public function deleteThread($thread) {
+        $sql = "delete from bbs2 where id = :id";
+        $this->execute($sql, array(":id" => $thread));
+    }
+    
+    public function deleteEntities($entityList) {
+        $tempList = array();
+        foreach ($entityList as $entity) {
+            $tempList[] = "'{$entity}'";
+        }
+        $ids = implode(",", $tempList);
+        $sql = "delete from entity where id in (" . $ids . ")";
+        $this->execute($sql);
     }
 
 }

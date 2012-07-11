@@ -5,4 +5,9 @@ class MemberRepository extends DbRepository {
         $sql = "INSERT INTO member VALUES (:userid, :pass)";
         return $this->execute($sql, array(':userid' => $userid, 'pass' => sha1($pass)));
     }
+    
+    public function fetchByUserId ($userid) {
+        $sql = "SELECT * from member where id = :userid";
+        return $this->execute($sql, array(':userid' => $userid));
+    }
 }

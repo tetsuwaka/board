@@ -2,7 +2,7 @@
 
 class BoardApplication extends Application {
     
-    protected $login_action = array('account', 'signin');
+    //protected $login_action = array('admin', 'autheniticate');
     
     public function getRootDir() {
         return dirname(__FILE__);
@@ -13,6 +13,10 @@ class BoardApplication extends Application {
             '/' => array('controller' => 'index', 'action' => 'index'),
             '/thread' => array('controller' => 'index', 'action' => 'thread'),
             '/write' => array('controller' => 'index', 'action' => 'write'),
+            '/login' => array('controller' => 'admin', 'action' => 'autheniticate'),
+            '/edit' => array('controller' => 'admin', 'action' => 'edit'),
+            '/delivery/thread' => array('controller' => 'delivery', 'action' => 'thread'),
+            '/delivery/entity' => array('controller' => 'delivery', 'action' => 'entity'),
         );
     }
     

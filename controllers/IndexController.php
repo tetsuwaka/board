@@ -30,7 +30,7 @@ class IndexController extends Controller {
         }
 
         return $this->render(array(
-                    '_token' => $this->generateCsrfToken('index/signup'),
+                    '_token' => $this->generateCsrfToken('index/index'),
                     'bbsList' => $bbsList,
                     'threadList' => $threadList,
                 ));
