@@ -37,7 +37,7 @@ class AdminController extends Controller {
         $message = "";
         
         // 削除ボタンが押された場合
-        if (isset($this->request->getPost('erase'))) {
+        if ($this->request->getPost('erase') !== null) {
 
             // ワンタイムトークンパス
             $token = $this->request->getPost('_token');
@@ -46,12 +46,12 @@ class AdminController extends Controller {
             }
 
             // スレッド削除
-            if (isset($this->request->getPost('thread'))) {
+            if ($this->request->getPost('thread') !== null) {
                 $this->db_manager->get('Board')->deleteThread($this->request->getPost('thread'));
                 $message = "スレッド{$_POST['thread']}を削除しました。";
 
                 // エンティティ削除
-            } else if (isset($this->request->getPost('entity'))) {
+            } else if ($this->request->getPost('entity') !== null) {
                 $this->db_manager->get('Board')->deleteEntities($this->request->getPost('entity'));
                 $message = "エンティティ{$ids}を削除しました。";
             }
