@@ -28,7 +28,7 @@ class AdminController extends Controller {
             $this->session->setAuthenticated(true);
             $this->session->set('user', $user);
             
-            return $this->redirect('/board/edit');
+            return $this->redirect('/edit');
         }
     }
     
