@@ -8,13 +8,13 @@ class AdminController extends Controller {
         
         // ポストされているか
         if (!$this->request->isPost()) {
-            return $this->redirect('/board/index.php');
+            return $this->redirect('/');
         }
         
         // ワンタイムトークンパス
         $token = $this->request->getPost('_token');
         if (!$this->checkCsrfToken('index/index', $token)) {
-            return $this->redirect('/board/index.php');
+            return $this->redirect('/');
         }
         
         $userid = $this->request->getPost('id');
@@ -23,7 +23,7 @@ class AdminController extends Controller {
         $user = $this->db_manager->get('Member')->fetchByUserId($userid);
         
         if(!$user || ($user['pass'] !== sha1($pass))) {
-            return $this->redirect('/board/index.php');
+            return $this->redirect('/');
         } else {
             $this->session->setAuthenticated(true);
             $this->session->set('user', $user);
