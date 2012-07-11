@@ -8,10 +8,10 @@ $(document).ready(function(){
 });
 
 // スレッドリストと初期エンティティリストをGET
-$.getJSON("/board/delivery/thread", null, 
+$.getJSON("/board/index.php/delivery/thread", null, 
 function(data){
   threadlist = data;
-  $.getJSON("/board/delivery/entity", {'id': threadlist[0].id}, 
+  $.getJSON("/board/index.php/delivery/entity", {'id': threadlist[0].id}, 
     function(data){
       entitylist = data;
   });
@@ -80,7 +80,7 @@ $('#type').change(function(){
 function getNewEntitylist(){
   var id = $('#selector option:selected').attr("id");
   $.ajaxSetup({async: false});
-  $.getJSON("/board/delivery/entity", {'id': id}, function(data){entitylist = data;});
+  $.getJSON("/board/index.php/delivery/entity", {'id': id}, function(data){entitylist = data;});
   $.ajaxSetup({async: true});
   $('#entitylist').html(showEntitylist());
   sessionStorage['entity'] = $('#selector option:selected').val();
