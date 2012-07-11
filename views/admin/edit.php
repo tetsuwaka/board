@@ -24,3 +24,4 @@
 
 <br><br>
 <div align="center"><a href="/board/index.php">ホームに戻る</a></div>
+<script src="/board/js/edit.js" type="text/javascript" charset="UTF-8"></script>
