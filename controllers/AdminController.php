@@ -42,7 +42,7 @@ class AdminController extends Controller {
             // ワンタイムトークンパス
             $token = $this->request->getPost('_token');
             if (!$this->checkCsrfToken('admin/edit', $token)) {
-                return $this->redirect('/board/index.php');
+                return $this->redirect('/');
             }
 
             // スレッド削除

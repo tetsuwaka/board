@@ -54,7 +54,7 @@ class IndexController extends Controller {
 
     public function writeAction() {
         if (!$this->request->isPost()) {
-            $this->redirect('/board/index.php');
+            $this->redirect('/');
         }
         $name = $this->request->getPost('name');
         $body = $this->request->getPost('body');
@@ -66,7 +66,44 @@ class IndexController extends Controller {
         // スレッドのアップデート
         $result = $this->db_manager->get('Board')->getEntityCount($thread);
         $this->db_manager->get('Board')->updateThread($thread, $result[0]);
+
+        return $this->render(array());
+    }
+
+    public function mkthreadAction() {
+        return $this->render(array('_token' => $this->generateCsrfToken('index/mkthread')));
+    }
+
+    public function createAction() {
+
+        // ポストされているか
+        if (!$this->request->isPost()) {
+            return $this->redirect('/');
+        }
+
+        // ワンタイムトークンパス
+        $token = $this->request->getPost('_token');
+        if (!$this->checkCsrfToken('index/mktread', $token)) {
+            return $this->redirect('/');
+        }
+
+        $name = $this->request->getPost('name');
+        $body = $this->request->getPost('body');
+        $title = $this->request->getPost('title');
+
+        if (($body === null) or ($title === null)) {
+            return $this->redirect('/');
+        }
+
+        // スレッド作成
+        $this->db_manager->get('Board')->makeThread($title);
+
+        // スレッドのIDを得る
+        $myid = $this->db_manager->get('Board')->getThreadId($title);
         
+        // スレッドに書き込む
+        $this->db_manager->get('Board')->insertEntity($body, $myid['id'], $name);
+
         return $this->render(array());
     }
 
