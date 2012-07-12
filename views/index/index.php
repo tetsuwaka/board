@@ -55,7 +55,7 @@
 
 <br><br>
 <div id="input" align=center>
-    <a href="mkthread.php"><h3>スレッドを作成する</h3></a>
+    <a href="<?php echo $base_url; ?>/mkthread"><h3>スレッドを作成する</h3></a>
 </div>
 
 <br>
