@@ -83,7 +83,7 @@ class IndexController extends Controller {
 
         // ワンタイムトークンパス
         $token = $this->request->getPost('_token');
-        if (!$this->checkCsrfToken('index/mktread', $token)) {
+        if (!$this->checkCsrfToken('index/mkthread', $token)) {
             return $this->redirect('/');
         }
 
