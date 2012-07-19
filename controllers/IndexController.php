@@ -39,7 +39,7 @@ class IndexController extends Controller {
     public function threadAction() {
         $threadid = $this->request->getGet('threadid');
 
-        if ($threadid === null or $threadid === '') {
+        if ($threadid === null or $threadid === '' or !ctype_digit($threadid)) {
             $this->forward404();
         }
 
