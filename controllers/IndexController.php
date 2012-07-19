@@ -60,6 +60,10 @@ class IndexController extends Controller {
         $body = $this->request->getPost('body');
         $thread = $this->request->getPost('thread');
 
+	if (empty($body) or empty($thread)) {
+            $this->forward404();
+        }
+
         // 書き込み
         $this->db_manager->get('Board')->insertEntity($body, $thread, $name);
 
